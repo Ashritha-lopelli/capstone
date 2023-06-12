@@ -1,0 +1,131 @@
+/* .mainreg{
+
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.inner-reg{
+
+    display: flex;
+    flex-direction: column;
+    gap:18px;
+    border:1px solid black;
+    padding:40px;
+    border-radius: 10px;
+}
+
+.reg-p{
+
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.lbls{
+
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.reg{
+
+    height: 30px;
+    padding:10px;
+    padding:4px;
+}
+
+.success{
+
+    color:green;
+}
+
+.error{
+    color:red;
+} */
+
+
+
+
+
+
+
+
+
+
+
+
+
+            /* OTHER CODE */
+
+
+            .mainreg {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+              }
+              
+              .inner-reg {
+                width: 300px;
+                padding: 20px;
+                background: #f2f2f2;
+                border-radius: 5px;
+              }
+              
+              .reg-p {
+                font-size: 18px;
+                font-weight: bold;
+                text-align: center;
+                margin-bottom: 20px;
+              }
+              
+              .inner {
+                margin-bottom: 10px;
+              }
+              
+              .lbls {
+                font-size: 14px;
+                font-weight: bold;
+                margin-bottom: 5px;
+              }
+              
+              .reg {
+                width: 100%;
+                padding: 10px;
+                border: 1px solid #ccc;
+                border-radius: 3px;
+              }
+              
+              .btn {
+                display: block;
+                width: 100%;
+                padding: 10px;
+                background: #007bff;
+                color: #fff;
+                border: none;
+                border-radius: 3px;
+                cursor: pointer;
+              }
+              
+              .btn:disabled {
+                background: #ccc;
+                cursor: not-allowed;
+              }
+              
+              .success,
+              .error {
+                display: block;
+                margin-top: 10px;
+                font-size: 14px;
+                text-align: center;
+              }
+              
+              .success {
+                color: green;
+              }
+              
+              .error {
+                color: red;
+              }
+              

@@ -1,0 +1,125 @@
+<<<<<<< HEAD
+.fp{
+
+    width:100%;
+    max-width:1024px;
+    display:flex;
+    justify-content: space-between;
+    gap:20px;
+}
+
+.fpitem{
+
+    flex:1;
+    gap:10px;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.fpImg{
+
+    width:30%;
+    cursor:pointer;
+    border-radius: 5px;
+}
+
+.fpname{
+
+    font-weight: bold;
+}
+
+.fpcity{
+
+    font-weight: 300;
+}
+
+.fpprice{
+
+    font-weight: 500;
+}
+
+.fprating>button{
+
+    background-color:#003580;
+    color:white;
+    border:none;
+    padding:3px;
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+.fprating>span{
+
+    font-size: 14px;
+}
+=======
+.fp{
+
+    width:100%;
+    max-width:1024px;
+    display:flex;
+    justify-content: space-between;
+    gap:20px;
+}
+
+.fpitem{
+
+    flex:1;
+    gap:10px;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.fpImg{
+
+    width:30%;
+    cursor:pointer;
+    border-radius: 5px;
+}
+
+.fpname{
+
+    font-weight: bold;
+}
+
+.fpcity{
+
+    font-weight: 300;
+}
+
+.fpprice{
+
+    font-weight: 500;
+}
+
+.fprating>button{
+
+    background-color:#003580;
+    color:white;
+    border:none;
+    padding:3px;
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+.fprating>span{
+
+    font-size: 14px;
+}
+
+
+.spinner {
+    animation: spin 1s linear infinite;
+    font-size: 24px;
+    margin-bottom: 10px;
+    color:gold;
+    font-weight: bold;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+>>>>>>> a11b54c4ee3b9de9d6744885d7c2c200b3ea9436
