@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+const mongoose = require("mongoose");
 
 const tourSchema = new mongoose.Schema(
   {
@@ -7,26 +7,18 @@ const tourSchema = new mongoose.Schema(
       required: true,
       unique: true,
     },
-    city: {
+    subTitle: {
       type: String,
       required: true,
     },
-    address: {
+    itenary: {
       type: String,
       required: true,
     },
-    distance: {
-      type: Number,
-      required: true,
-    },
-    photo: {
-      type: String,
-      required: true,
-    },
-    desc: {
-      type: String,
-      required: true,
-    },
+    tags: [{ type: String }],
+    images: [{ type: String }],
+    tourOperator: { type: String },
+    OperatedIn: { type: String },
     price: {
       type: Number,
       required: true,
@@ -35,14 +27,16 @@ const tourSchema = new mongoose.Schema(
       type: Number,
       required: true,
     },
-
+    highlights: [{ type: String }],
+    availableMonths: [{ type: String }],
+    adventureType: { type: String },
+    country: { type: String },
     reviews: [
       {
         type: mongoose.Types.ObjectId,
         ref: "Review",
       },
     ],
-
     featured: {
       type: Boolean,
       default: false,
@@ -51,4 +45,6 @@ const tourSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-export default mongoose.model("Tour", tourSchema);
+const Tour = mongoose.model("Tour", tourSchema);
+
+module.exports = Tour;

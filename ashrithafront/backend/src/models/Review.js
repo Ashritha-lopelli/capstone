@@ -1,14 +1,14 @@
-import mongoose from "mongoose";
+const mongoose = require("mongoose");
 
 const reviewSchema = new mongoose.Schema(
   {
-    productId: {
+    tourId: {
       type: mongoose.Types.ObjectId,
       ref: "Tour",
     },
-    username: {
-      type: String,
-      required: true,
+    user: {
+      type: mongoose.Types.ObjectId,
+      ref: "User",
     },
     reviewText: {
       type: String,
@@ -25,4 +25,6 @@ const reviewSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-export default mongoose.model("Review", reviewSchema);
+const Review = mongoose.model("Review", reviewSchema);
+
+module.exports = Review;
