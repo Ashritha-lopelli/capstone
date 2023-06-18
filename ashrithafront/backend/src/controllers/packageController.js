@@ -53,7 +53,7 @@ const getPackageDetails = async (req, res) => {
 
     const data = await Tour.findById(tour).populate({
       path: "reviews",
-      select: "-createdAt -updatedAt -_id -tourId",
+      select: "-updatedAt -_id -tourId",
       populate: {
         path: "user",
         select: "username email", // Include only the "name" and "email" fields from the user document
