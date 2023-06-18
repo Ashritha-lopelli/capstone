@@ -22,9 +22,11 @@ const SearchBar = ({ params }) => {
   }, []);
 
   useEffect(() => {
-    setLocation(params.location || null);
-    setAdventureType(params.adventure || null);
-    setWhen(params.month || null);
+    if (params) {
+      setLocation(params.location || null);
+      setAdventureType(params.adventure || null);
+      setWhen(params.month || null);
+    }
   }, [params]);
 
   const fetchCountries = async () => {
