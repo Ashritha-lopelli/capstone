@@ -1,64 +1,76 @@
-import React, {useState, useEffect} from 'react';
-import CommonSection from '../shared/CommonSection';
-import '../styles/tour.css';
-import Newsletter from '../shared/Newsletter';
-import SearchBar from '../shared/SearchBar';
-import TourCard from '../shared/TourCard';
-import tourdata from '../assets/data/tours';
-import {Container} from 'reactstrap';
-import {Row} from 'reactstrap';
-import {Col} from 'reactstrap';
-
+/* eslint-disable react-hooks/exhaustive-deps */
+import React, { useEffect, useState } from "react";
+import CommonSection from "../shared/CommonSection";
+import "../styles/tour.css";
+import Newsletter from "../shared/Newsletter";
+import SearchBar from "../shared/SearchBar";
+import TourCard from "../shared/TourCard";
+import { Alert, Container } from "reactstrap";
+import { Row } from "reactstrap";
+import { Col } from "reactstrap";
+import { useTours } from "../hooks/tours";
+import { useSearchParams } from "react-router-dom";
+import isEmpty from "lodash/isEmpty";
 
 const Tours = () => {
+  const [error, setError] = useState(null);
+  const [searchParams] = useSearchParams();
 
-  const [pageCount, setPageCount] = useState(0)
-  const [page, setPage] = useState(0)
+  const { tours, fetchTours } = useTours();
+  const [params, setParams] = useState({});
 
-  useEffect(()=>{
-    const pages = Math.ceil(5/ 4)
-    setPageCount(pages)
-  },[page])
+  useEffect(() => {
+    if (!tours.isLoaded) {
+      fetchTours({ featured: true }, setError);
+    }
+  }, []);
+
+  useEffect(() => {
+    const params = Object.fromEntries([...searchParams]);
+
+    if (!isEmpty(params)) {
+      setParams(params);
+      fetchTours(params, setError);
+    } else if (!tours.isLoaded) {
+      fetchTours({ featured: true }, setError);
+    }
+  }, [searchParams]);
 
   return (
     <>
-      <CommonSection title={'ALL ttours'}/>
+      <CommonSection title={"All Tours"} />
       <section>
         <Container>
           <Row>
-            <SearchBar/>
+            <SearchBar params={params} />
           </Row>
         </Container>
       </section>
       <section>
         <Container>
+          <p>
+            <Alert color="danger" isOpen={error}>
+              {error}
+            </Alert>
+          </p>
           <Row>
-            {
-              tourdata?.map(tour=> (
-              <Col lg='3' className='mb-4' key={tour.id}> 
+            {tours.data.length === 0 && (
+              <div className="d-flex justify-content-center">
+                <h1>No Packages Found</h1>
+              </div>
+            )}
+            {tours.data?.map((tour) => (
+              <Col lg="3" className="mb-4" key={tour.id}>
                 {""}
-                <TourCard tour={tour}/>
+                <TourCard tour={tour} />
               </Col>
-              ))
-            }
-              <Col lg='12'>
-                <div className='pagination d-flex align-items-center justify-content-center mt-4 gap-3'>
-                  {[...Array(pageCount).keys()].map(number => (
-                    <span key={number} onClick={()=> setPage(number)}
-                    className={page===number ? 'active__page' : ''}
-                    >
-                      {number + 1}
-                    </span>
-                  ))}
-                </div>
-       
-              </Col>
+            ))}
           </Row>
         </Container>
       </section>
-      <Newsletter/>
+      <Newsletter />
     </>
-    )
-}
+  );
+};
 
-export default Tours
+export default Tours;

@@ -7,13 +7,18 @@ import "remixicon/fonts/remixicon.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { BrowserRouter } from "react-router-dom";
-
+import AppProvider from "./hooks";
+import { ToursProvider } from "./hooks/tours";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <App />
+      <AppProvider>
+        <ToursProvider>
+          <App />
+        </ToursProvider>
+      </AppProvider>
     </BrowserRouter>
   </React.StrictMode>
 );
