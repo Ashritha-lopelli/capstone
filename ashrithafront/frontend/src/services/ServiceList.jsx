@@ -15,12 +15,12 @@ const servicesData =[
   },
   {
     imgUrl: guideImg,
-    title: "calculate weather",
+    title: "chose your guide",
     desc: "Some travel to learn more while some travel to take a break from their life"
   },
   {
     imgUrl: customizationImg,
-    title: "calculate weather",
+    title: "customize your package",
     desc: "Some travel to learn more while some travel to take a break from their life"
   }
 ]

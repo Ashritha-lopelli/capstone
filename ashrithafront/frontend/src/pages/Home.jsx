@@ -19,6 +19,7 @@ const Home = () => {
       <section>
         <Container>
           <Row>
+
             <Col lg="6">
               <div className="hero__content">
                 <div className="hero__subtitle d-flex align-items-center">
@@ -26,15 +27,15 @@ const Home = () => {
                   <img src={worldImg} alt="" />
                 </div>
                 <h1>
-                  Travelling opens the door for creating
+                  Cultivating connections through shared experiences
                   <span className="hightlight"> memories</span>
                 </h1>
                 <p>
-                  Travelling is an amazing way to learn a lot of things in life.
-                  A lot of people around the world travel every year to many
-                  places. Moreover, it is important to travel to humans. Some
-                  travel to learn more while some travel to take a break from
-                  their life.
+                  Travelling serves as a remarkable means of acquiring valuable life lessons.
+                  Every year, countless individuals embark on journeys to various destinations worldwide.
+                  Furthermore, traveling holds significance for humanity.
+                  Some undertake travels with the intention of expanding their knowledge,
+                  while others seek respite from their daily routines.
                 </p>
               </div>
             </Col>
@@ -84,7 +85,7 @@ const Home = () => {
           <Row>
             <Col lg="12" className="mb-5">
               <Subtitle subtitle={"Explore"} />
-              <h2 className="featured__tour-title">Our feature tours</h2>
+              <h2 className="featured__tour-title">Our featured packages</h2>
             </Col>
             <FeaturedTourList />
           </Row>

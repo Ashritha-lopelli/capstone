@@ -9,6 +9,6 @@ router.get("/packages/:tour", PackageController.getPackageDetails);
 
 router.get("/packages", PackageController.getPackages);
 
-router.get("/packages/add", PackageController.addPackage);
+router.post("/packages/add", PackageController.addPackage);
 
 module.exports = router;

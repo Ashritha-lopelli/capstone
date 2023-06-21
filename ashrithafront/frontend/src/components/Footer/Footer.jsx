@@ -97,7 +97,7 @@ const Footer = () => {
                     <span><i class="ri-map-pin-line"></i></span>
                     Address
                   </h6>
-                  <p className='mb-0'>NYC, USA</p>
+                  <p className='mb-0'>CA, USA</p>
                 </ListGroupItem>
           </ListGroup>
 
@@ -109,7 +109,7 @@ const Footer = () => {
                     <span><i class="ri-mail-fill"></i></span>
                     E-mail
                   </h6>
-                  <p className='mb-0'>reina@gmail.com</p>
+                  <p className='mb-0'>cs570@gmail.com</p>
                 </ListGroupItem>
           </ListGroup>
 
@@ -121,13 +121,13 @@ const Footer = () => {
                     <span><i class="ri-phone-line"></i></span>
                     Phone
                   </h6>
-                  <p className='mb-0'>+126363639</p>
+                  <p className='mb-0'>000000000</p>
                 </ListGroupItem>
           </ListGroup>
         </Col>
       
         <Col lg='12' className='text-center pt-5' >
-          <p className='copyroght'>copyright {year}, design and develop by Reina Tamar.
+          <p className='copyroght'>copyright {year}, designed and developed by AshrithaLopelli.
                                   All rights reserved.</p>
         </Col>
 

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { Container, Row, Col, Form, FormGroup, Button } from "reactstrap";
 import { Link } from "react-router-dom";
 import "../styles/login.css";
@@ -10,6 +10,11 @@ import { register } from "../utils/api";
 
 const Register = () => {
   const [error, setError] = useState(null);
+  const [success, setSuccess] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
+
+  const formRef = useRef();
+
   const [credentials, setCredentials] = useState({
     username: undefined,
     email: undefined,
@@ -21,21 +26,28 @@ const Register = () => {
   };
 
   const handleClick = async (e) => {
+    setIsLoading(true);
+    setError(false)
+    setSuccess(false)
+
     try {
       e.preventDefault();
 
-      const res = await register(credentials);
+      const { data, status } = await register(credentials);
 
-      console.log(res);
+      if (status === 200 && data.status === "Success") {
+        setSuccess("Registered successfully!!")
+      }
     } catch (err) {
       const { status, data } = err.response;
-
+      setSuccess(false)
       if (status === 400) {
         setError(data.message);
       } else {
         setError("Something went wrong, Try again later.");
       }
     }
+    setIsLoading(false);
   };
 
   return (
@@ -54,13 +66,14 @@ const Register = () => {
                 </div>
                 <h2>Register</h2>
 
-                <Form onSubmit={handleClick}>
+                <Form ref={formRef} onSubmit={handleClick}>
                   <FormGroup>
                     <input
                       type="text"
                       placeholder="Username"
                       required
                       id="username"
+                      value={credentials.username}
                       onChange={handleChange}
                     />
                   </FormGroup>
@@ -70,6 +83,7 @@ const Register = () => {
                       placeholder="E-mail"
                       required
                       id="email"
+                      value={credentials.email}
                       onChange={handleChange}
                     />
                   </FormGroup>
@@ -79,6 +93,7 @@ const Register = () => {
                       placeholder="PASSWORD"
                       required
                       id="password"
+                      value={credentials.password}
                       onChange={handleChange}
                     />
                   </FormGroup>
@@ -86,12 +101,17 @@ const Register = () => {
                     className="btn secondary__btn auth__btn"
                     type="submit"
                   >
-                    Create account
+                    {isLoading ? 'Registering...' : 'Create account'}
                   </Button>
                 </Form>
                 <p>
                   <Alert color="danger" isOpen={error}>
                     {error}
+                  </Alert>
+                </p>
+                <p>
+                  <Alert color="success" isOpen={success}>
+                    {success}
                   </Alert>
                 </p>
                 <p>
