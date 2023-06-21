@@ -1,5 +1,11 @@
 # Tour Management
 
-![Tour-Management-MotvIMG](./frontend/src/assets/images/TourManagement.png)
+1. Start Frontend steps:
+    a. npm install
+    b. navigate to frontend folder
+    c. npm  start
 
-![Tour-Management-MotvIMG2](./frontend/src/assets/images/TourManagement2.png)
+2.  Start Backedn steps:
+    a. npm install
+    b. navigate to backend folder
+    c. npm start
