@@ -10,13 +10,14 @@ const Newsletter = () => {
                 <Row>
                     <Col>
                         <div className='newsletter_content'>
-                            <h2>Subscribe now to get useful traveling information</h2>
+                            <h2>To get more useful traveling information Subscribe now! </h2>
                             <div className='newsletter-input'>
                                 <input type="email" placeholder='Enter your email' />
                                 <button className="btn newsletter__btn">Subscribe</button>
                             </div>
-                            <p>Moreover, it is important to travel to humans. Some
-                                travel to learn more while some travel to take a break from their life.</p>
+                            <p>
+                                Moreover, the essence of travel resonates differently with each individual—some seek enlightenment, 
+                                while others seek solace, all in pursuit of enriching experiences.</p>
                         </div>
                     </Col>
                     <Col lg='6'>

@@ -43,9 +43,8 @@ const Footer = () => {
         <Col lg='3'>
           <div className="logo">
             <img src={logo} alt="" />
-            <p>Moreover, it is important to travel to humans. Some 
-              travel to learn more while some travel to take a break 
-              from their life.
+            <p>Moreover, the essence of travel resonates differently with each individual—some seek enlightenment, 
+              while others seek solace, all in pursuit of enriching experiences.
             </p>
             <div className="social__links d-flex align-items-center gap-4">
               
